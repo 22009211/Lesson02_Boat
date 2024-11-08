@@ -1,14 +1,35 @@
 import React from 'react';
-import {View, ScrollView, Text} from 'react-native';
+import {View, ScrollView, Text, StyleSheet} from 'react-native';
 import Boat from './components/Boats';
 
+const styles = StyleSheet.create({
+  title: {
+    textAlign: 'center',
+    fontSize: 20,
+    borderColor: 'black',
+    backgroundColor: 'grey',
+    borderWidth: 2,
+  },
+  parent: {
+    flexDirection: 'column',
+    borderColor: 'black',
+    backgroundColor: 'grey',
+    borderWidth: 2,
+  },
+  child: {
+    flex: 1,
+    backgroundColor: 'lightgrey',
+    borderColor: 'black',
+    borderWidth: 2,
+  },
+});
 const AllBoats = ()=> {
   return (
-      <ScrollView>
-        <Text>
+      <ScrollView style={styles.parent}>
+        <Text style={styles.title}>
           GetABoat - For Sale
         </Text>
-        <View>
+        <View style={styles.child}>
             <Boat name="Sea Ray 500 Sundancer"
                   description="Contoured lines and dramatic styling reveal a refined
                    and powerful presence that will take your breath away."
